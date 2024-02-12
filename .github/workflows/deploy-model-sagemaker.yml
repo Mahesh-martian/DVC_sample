@@ -35,7 +35,7 @@ jobs:
     - uses: aws-actions/configure-aws-credentials@v4
       with:
         aws-region: us-east-1
-        role-to-assume: ${{ vars.AWS_SANDBOX_ROLE }}
+        role-to-assume: arn:aws:iam::963548470774:policy/service-role/AmazonSageMaker-ExecutionPolicy-20240212T134919
         role-duration-seconds: 43200
 
     - name: Set up Python
@@ -56,4 +56,4 @@ jobs:
         --stage ${{ needs.parse.outputs.stage }} \
         --version ${{ needs.parse.outputs.version }} \
         --model_data $MODEL_DATA \
-        --role arn:aws:iam::963548470774:user/SagemakerExample
+        --role arn:aws:iam::963548470774:policy/service-role/AmazonSageMaker-ExecutionPolicy-20240212T134919
