@@ -1,0 +1,6 @@
+[core]
+    remote = myblogstorage1
+['remote "storage"']
+    url = https://remote.dvc.org/get-started-pools
+['remote "myblogstorage1"']
+    url = azure://dvcstorage/dvcdemo
